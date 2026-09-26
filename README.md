@@ -18,7 +18,7 @@ first screen). The architect saves — every subscribed service of the node re-s
 | doors | `GET /api/settings/design` (node key or architect), `PATCH /api/settings/design` (architect only) |
 | MCP | `/mcp`: `describe_config`, `settings_version`, `get_project_settings` (kind `design`), `subscribe` |
 | signal | after every save — `POST {version}` with `X-Settings-Key` to every subscriber (`subscribers.js`) |
-| editor | `/<lang>/architect` (colours — light), `/colors-dark`, `/fonts`, `/type-shape`, `/blocks` — behind the architect gate |
+| editor | `/<lang>/architect` (fonts), `/type`, `/shape`, `/colors` — the four editors of the core original (aifa.dev/ru/architect/design): choice on the left, sticky preview on the right, ten ready colour sets; behind the architect gate |
 | public page | `/en`, `/ru` |
 
 ## Install

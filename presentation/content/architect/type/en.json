@@ -1,17 +1,11 @@
 {
-  "title": "Text, shapes and spacing",
-  "lead": "Saved here — applied on every page of every service of the project in seconds, without a rebuild. Reload the page to see it.",
+  "title": "Typography",
+  "lead": "The type scale and line height — one number for the whole set.",
   "blocks": [
     {
-      "kind": "settingsEditor",
+      "kind": "designEditor",
       "lang": "en",
-      "group": "typeShape",
-      "langs": [
-        "en",
-        "ru"
-      ],
-      "defaultLang": "en",
-      "editLangLabel": "Editing language:",
+      "section": "type",
       "words": {
         "loading": "Loading the settings…",
         "signin": "Sign in as the architect of the project to see and change the settings.",

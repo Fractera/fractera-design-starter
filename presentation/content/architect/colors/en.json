@@ -1,17 +1,11 @@
 {
-  "title": "Fonts",
-  "lead": "Saved here — applied on every page of every service of the project in seconds, without a rebuild. Reload the page to see it.",
+  "title": "Colours",
+  "lead": "Seven roles in two themes, with a live contrast check.",
   "blocks": [
     {
-      "kind": "settingsEditor",
+      "kind": "designEditor",
       "lang": "en",
-      "group": "fonts",
-      "langs": [
-        "en",
-        "ru"
-      ],
-      "defaultLang": "en",
-      "editLangLabel": "Editing language:",
+      "section": "colors",
       "words": {
         "loading": "Loading the settings…",
         "signin": "Sign in as the architect of the project to see and change the settings.",

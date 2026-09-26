@@ -1,17 +1,13 @@
 {
-  "title": "Colours — light theme",
-  "lead": "Saved here — applied on every page of every service of the project in seconds, without a rebuild. Reload the page to see it.",
+  "title": "Design",
+  "lead": "The look of this project. What you save here is applied on every page of every service of the project in seconds, without a rebuild.",
+  "menuLabel": "Fonts",
+  "menuLead": "Headings, body text and monospace — where the families come from and how they are connected.",
   "blocks": [
     {
-      "kind": "settingsEditor",
+      "kind": "designEditor",
       "lang": "en",
-      "group": "colorsLight",
-      "langs": [
-        "en",
-        "ru"
-      ],
-      "defaultLang": "en",
-      "editLangLabel": "Editing language:",
+      "section": "fonts",
       "words": {
         "loading": "Loading the settings…",
         "signin": "Sign in as the architect of the project to see and change the settings.",

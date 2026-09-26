@@ -24,7 +24,7 @@ import { cacheLife, cacheTag } from 'next/cache'
 
 export const PAGE_TREE_TAG = 'page-tree'
 
-export type PageWords = { title: string; lead?: string; blocks?: unknown[]; menuLabel?: string }
+export type PageWords = { title: string; lead?: string; blocks?: unknown[]; menuLabel?: string; menuLead?: string }
 export type TreePage = { collection: string; slug: string[]; order: number; index: boolean; langs: string[] }
 export type TreeCollection = {
   id: string

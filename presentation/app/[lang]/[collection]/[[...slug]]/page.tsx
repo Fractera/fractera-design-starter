@@ -105,7 +105,7 @@ async function WorkspacePage({ c, slug, lang }: { c: TreeCollection; slug: strin
         menuWord={menuWord}
         menu={menu}
         title={current?.w?.title ?? homeLabel}
-        lead={current?.w?.lead}
+        lead={current ? current.w?.lead : head?.menuLead}
       >
         <PageBody blocks={blocks as unknown as BlockData[]} set={BLOCK_SET} />
       </WorkspaceShell>

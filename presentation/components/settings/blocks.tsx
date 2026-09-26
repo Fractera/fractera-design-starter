@@ -9,6 +9,8 @@ import { groupsUi } from './groups.i18n'
 import { RoutingEditorIsland, CookieBannerIsland } from './platform-editors.client'
 import type { AccessWords } from './settings-access'
 import { LanguagesIsland } from './languages-island.client'
+import { DesignEditorIsland, type DesignSection } from '@/components/design/design-editor.client'
+import { designUi } from '@/components/design/design.i18n'
 import { ALL_LANGUAGE_METADATA } from '@/lib/settings/language-metadata'
 import { loadProjectShell } from '@/components/shell/remote-shell'
 import type { ShellGroup } from '@/components/shell/shell-types'
@@ -93,4 +95,11 @@ async function shellLanguages(lang: string): Promise<{ languages: string[]; defa
     ? (shell.languages as unknown[]).map((x) => (typeof x === 'string' ? x : (x as { code?: string })?.code)).filter((x): x is string => typeof x === 'string')
     : ['en']
   return { languages: codes, defaultLang: typeof shell?.defaultLang === 'string' ? shell.defaultLang : codes[0] }
+}
+
+// Редактор «Дизайна» (310): слова раздела выбирает СЕРВЕР (`designUi(lang)`) и отдаёт островку только его четыре ветки —
+// словарь целиком в браузер не едет.
+export function DesignEditorBlock({ lang, blockKey: _k, section, words }: Own & { section: DesignSection; words: AccessWords }) {
+  const all = designUi(lang)
+  return <DesignEditorIsland section={section} ui={{ colors: all.colors, fonts: all.fonts, type: all.type, shape: all.shape }} words={words} loginHref={loginHref(lang)} />
 }
