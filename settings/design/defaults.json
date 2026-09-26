@@ -1,0 +1,17 @@
+{
+  "colors": {
+    "light": {},
+    "dark": {}
+  },
+  "fonts": {},
+  "type": {},
+  "shape": {},
+  "blocks": {
+    "heroOneWidth": 1250,
+    "heroOneSize": {
+      "mobile": 31.2,
+      "tablet": 39,
+      "desktop": 46.8
+    }
+  }
+}

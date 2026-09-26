@@ -1,0 +1,16 @@
+{
+  "titles": {
+    "en": "Design",
+    "ru": "Дизайн"
+  },
+  "index": false,
+  "layout": "workspace",
+  "menuWord": {
+    "en": "Menu",
+    "ru": "Меню"
+  },
+  "crumbHome": {
+    "en": "Home",
+    "ru": "Главная"
+  }
+}

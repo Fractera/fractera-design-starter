@@ -1,0 +1,121 @@
+{
+  "id": "design",
+  "name": "Fractera Design",
+  "summary": "The design of the project as its own element: colours, fonts, type, shapes and block settings live here, the architect edits them here, and every element of the node re-styles itself the moment they are saved.",
+  "kind": "microservice",
+  "entry": "own",
+  "port": {
+    "desired": 24686,
+    "note": "A wish, not a decision. The node assigns the actual port from the block 24680-24699. Ask the node, never remember."
+  },
+  "env": {
+    "file": ".env",
+    "example": ".env.example",
+    "note": "server.js calls dotenv on resolve(ROOT, '.env')."
+  },
+  "health": {
+    "path": "/health",
+    "expect": 200
+  },
+  "runtime": {
+    "stack": "node",
+    "node": ">=20",
+    "build": "npm run build",
+    "start": "npm run start",
+    "nativeModules": [],
+    "note": "server.js is the service (node:http). `npm run build` = the route guard + the site (presentation/, Next 16 Cache Components) into the folder NEXT_DIST_DIR names; `.presentation-dist` marks it. Pages are data folders in presentation/content (skill use-page-tree).",
+    "distDirEnv": "NEXT_DIST_DIR"
+  },
+  "protocols": {
+    "api": {
+      "provided": true,
+      "doors": [
+        "/api/settings",
+        "/api/settings/design",
+        "/api/settings/changed",
+        "/api/session"
+      ],
+      "format": "JSON: { ok, kind, defaults, patch, config } — config = the owner patch over the defaults"
+    },
+    "mcp": {
+      "provided": true,
+      "door": "/mcp",
+      "transport": "streamable-http, stateless",
+      "tools": [
+        "describe_config",
+        "settings_version",
+        "get_project_settings",
+        "subscribe"
+      ]
+    },
+    "a2a": {
+      "provided": false,
+      "note": "Not built in the prototype."
+    },
+    "m2m": {
+      "provided": false,
+      "note": "Not built in the prototype."
+    }
+  },
+  "doors": [
+    {
+      "path": "/en, /ru",
+      "method": "GET",
+      "gives": "the public home page of the element"
+    },
+    {
+      "path": "/robots.txt, /sitemap.xml",
+      "method": "GET",
+      "gives": "search signals; the sitemap lists pages only once the element has a real public address"
+    },
+    {
+      "path": "/health",
+      "method": "GET",
+      "gives": "liveness"
+    },
+    {
+      "path": "/mcp",
+      "method": "POST",
+      "gives": "MCP: the project design as commands for an agent"
+    },
+    {
+      "path": "/api/settings, /api/settings/design",
+      "method": "GET",
+      "gives": "the project design: the key X-Settings-Key (every element of the node) or the architect session"
+    },
+    {
+      "path": "/api/settings/design",
+      "method": "PATCH",
+      "gives": "write a patch — only the architect (session through the sign-in service); the key does not give writing"
+    },
+    {
+      "path": "/api/session",
+      "method": "GET",
+      "gives": "whether the viewer is the architect — for the screens of the architect mode"
+    }
+  ],
+  "provides": [
+    "project-design"
+  ],
+  "languages": {
+    "count": 2,
+    "codes": [
+      "en",
+      "ru"
+    ],
+    "note": "The public home page speaks en and ru."
+  },
+  "license": "MIT",
+  "settings": {
+    "owns": [
+      "DESIGN-CONFIG"
+    ],
+    "key": {
+      "header": "X-Settings-Key",
+      "env": "SETTINGS_SECRET"
+    },
+    "store": "data/settings/design.json (the owner patch; defaults in settings/design/defaults.json)",
+    "seed": "node scripts/seed-from-site.mjs <site folder> — once, at the birth of the element; never overwrites",
+    "note": "The SOURCE of the project design for the whole node (step 309). Every element subscribes and re-styles itself on the signal."
+  }
+}

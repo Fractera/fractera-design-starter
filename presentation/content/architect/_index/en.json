@@ -1,0 +1,25 @@
+{
+  "title": "Colours — light theme",
+  "lead": "Saved here — applied on every page of every service of the project in seconds, without a rebuild. Reload the page to see it.",
+  "blocks": [
+    {
+      "kind": "settingsEditor",
+      "lang": "en",
+      "group": "colorsLight",
+      "langs": [
+        "en",
+        "ru"
+      ],
+      "defaultLang": "en",
+      "editLangLabel": "Editing language:",
+      "words": {
+        "loading": "Loading the settings…",
+        "signin": "Sign in as the architect of the project to see and change the settings.",
+        "signinLink": "Sign in",
+        "forbidden": "You are signed in, but only the architect of the project can see and change these settings.",
+        "unavailable": "The sign-in service is not answering right now — try again in a minute.",
+        "error": "The settings could not be read. Nothing was changed."
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Blocks",
+  "lead": "Settings of the page blocks — applied on every page of the project without a rebuild.",
+  "blocks": [
+    {
+      "kind": "settingsEditor",
+      "lang": "en",
+      "group": "blocks",
+      "langs": [
+        "en",
+        "ru"
+      ],
+      "defaultLang": "en",
+      "editLangLabel": "Editing language:",
+      "words": {
+        "loading": "Loading the settings…",
+        "signin": "Sign in as the architect of the project to see and change the settings.",
+        "signinLink": "Sign in",
+        "forbidden": "You are signed in, but only the architect of the project can see and change these settings.",
+        "unavailable": "The sign-in service is not answering right now — try again in a minute.",
+        "error": "The settings could not be read. Nothing was changed."
+      }
+    }
+  ]
+}
