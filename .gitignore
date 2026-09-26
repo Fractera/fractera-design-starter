@@ -7,3 +7,6 @@ node_modules/
 .presentation-dist
 .next-r/
 data/
+
+# 315: font files copied from @fontsource packages before each build (scripts/local-fonts.mjs)
+presentation/public/fonts/
