@@ -152,7 +152,7 @@ async function architectGate(req, res, lang, pathname) {
   return false
 }
 
-const SITE_PATH = /^\/(?:(en|ru)(?:\/.*)?|_next\/.*|robots\.txt|sitemap\.xml)$/
+const SITE_PATH = /^\/(?:(en|ru)(?:\/.*)?|_next\/.*|fonts\/.*|robots\.txt|sitemap\.xml)$/
 
 createServer(async (req, res) => {
   const { pathname } = new URL(req.url ?? '/', 'http://x')
