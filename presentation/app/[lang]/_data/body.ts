@@ -18,15 +18,15 @@ export type ConfigHomeWords = {
 }
 
 const en: ConfigHomeWords = {
-  title: 'Fractera Design — the look of every service in one place',
-  heroTitle: 'One design for the whole project',
+  title: 'Fractera Design — the shared look of your products in one place',
+  heroTitle: 'A shared design for your products',
   pill: 'Agentic engineering infrastructure',
   heroSteps: [
     { title: 'Choose', text: 'Colours, fonts, shapes and spacing on one screen' },
-    { title: 'Save', text: 'Every service of the project gets a signal at once' },
-    { title: 'See', text: 'Each one re-styles itself in seconds, without a rebuild' },
+    { title: 'Save', text: 'Products that follow it re-style in seconds, without a rebuild' },
+    { title: 'Optional', text: 'For every product on the server or only chosen ones — each product decides' },
   ],
-  description: 'A standalone microservice that keeps the design of your project — colours for the light and dark theme, fonts, text scale, corner radius, spacing and block settings — and hands it to every service of the project the moment you save.',
+  description: 'A standalone microservice that keeps the design of your project — colours for the light and dark theme, fonts, text scale, corner radius, spacing and block settings — and hands it, the moment you save, to the products that follow it — every product on the server or only chosen ones: each product decides.',
   cta: 'Open the design',
   faqTitle: 'Frequently asked questions',
   faq: [
@@ -65,15 +65,15 @@ const en: ConfigHomeWords = {
 }
 
 const ru: ConfigHomeWords = {
-  title: 'Fractera Design — оформление всех служб в одном месте',
-  heroTitle: 'Один дизайн на весь проект',
+  title: 'Fractera Design — общее оформление ваших продуктов в одном месте',
+  heroTitle: 'Общий дизайн для ваших продуктов',
   pill: 'Инфраструктура агентной инженерии',
   heroSteps: [
     { title: 'Выберите', text: 'Цвета, шрифты, скругления и отступы на одном экране' },
-    { title: 'Сохраните', text: 'Каждая служба проекта сразу получает сигнал' },
-    { title: 'Смотрите', text: 'Каждая перекрашивается за секунды, без пересборки' },
+    { title: 'Сохраните', text: 'Продукты, которые следуют за ним, перекрашиваются за секунды' },
+    { title: 'Необязательно', text: 'Для всех продуктов сервера или только выбранных — решает каждый продукт' },
   ],
-  description: 'Самостоятельный микросервис, который хранит оформление вашего проекта — цвета светлой и тёмной темы, шрифты, масштаб текста, скругления, отступы и настройки блоков — и передаёт его каждой службе проекта в момент сохранения.',
+  description: 'Самостоятельный микросервис, который хранит оформление вашего проекта — цвета светлой и тёмной темы, шрифты, масштаб текста, скругления, отступы и настройки блоков — и в момент сохранения передаёт его продуктам, которые за ним следуют, — всем на сервере или только выбранным: решает каждый продукт.',
   cta: 'Открыть дизайн',
   faqTitle: 'Частые вопросы',
   faq: [
