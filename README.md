@@ -23,7 +23,7 @@ first screen). The architect saves — every subscribed service of the node re-s
 
 ## Install
 
-The node installer (`npm run services:install -- --only design`) with the entry in `AGI-ITEMS-CONFIG/agi-items.json`.
+The node installer (`npm run services:install -- --only design`) with the entry in `AGI-ITEMS-REGISTRY/agi-items.json`.
 Environment (`.env.example`): `PORT`, `SETTINGS_SECRET` (the node key), `AUTH_SERVICE_URL` (architect gate),
 `DESIGN_SERVICE_URL` (itself — the element follows its own design like every other service).
 At birth, seed it from the site once, so the first pull does not reset the project to the default theme:
