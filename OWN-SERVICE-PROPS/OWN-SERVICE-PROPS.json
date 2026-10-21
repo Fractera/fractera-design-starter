@@ -1,0 +1,24 @@
+{
+  "id": "design",
+  "name": "Fractera Design",
+  "shortDescription": "The design of the project as its own element: colours, fonts, type, shapes and block settings live here, the architect edits them here, and every element of the node re-styles itself the moment they are saved.",
+  "longDescription": "The shared look of the node: colours of the light and dark theme, fonts, type, shapes and block settings. The architect edits them on /<lang>/architect/*; every element takes them over MCP (/mcp: settings_version, get_project_settings, subscribe) with the node key, and after a save this element signals every subscribed address (POST {version} with X-Settings-Key). Defaults in settings/design/defaults.json, the owner patch in data/settings/design.json.",
+  "accepts": "The node key (X-Settings-Key) to read; the architect session (through the node sign-in element) to write.",
+  "returns": "The design settings: { ok, kind, defaults, patch, config } — config is the owner patch over the defaults.",
+  "designSkill": "impeccable",
+  "isFracteraArchitecture": true,
+  "framework": "next",
+  "elementType": "native",
+  "visibility": "node",
+  "calls": [
+    "auth",
+    "data",
+    "config",
+    "design"
+  ],
+  "messengers": {
+    "h2a": true,
+    "h2h": false,
+    "a2a": false
+  }
+}

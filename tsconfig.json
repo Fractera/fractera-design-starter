@@ -1,5 +1,52 @@
 {
-  "//": "Only for tools run from the repository root (shadcn add): `@/` is the site in presentation/. The site builds with presentation/tsconfig.json.",
-  "compilerOptions": { "baseUrl": ".", "paths": { "@/*": ["./presentation/*"] } },
-  "include": []
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@features/*": [
+        "./lib/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts",
+    ".next-a/types/**/*.ts",
+    ".next-a/dev/types/**/*.ts",
+    ".next-b/types/**/*.ts",
+    ".next-b/dev/types/**/*.ts",
+    ".next-p/types/**/*.ts",
+    ".next-p/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "WEB4-ITEMS"
+  ]
 }

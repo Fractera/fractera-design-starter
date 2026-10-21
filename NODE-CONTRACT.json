@@ -1,0 +1,126 @@
+{
+  "_": "Node contract of this element (step 417): what the node needs to install, run and manage it. Read by the node core only; never served to the outside. The public description is OWN-SERVICE-PROPS/.",
+  "kind": "microservice",
+  "entry": "own",
+  "port": {
+    "desired": 24686,
+    "note": "A wish, not a decision. The node assigns the actual port from the block 24680-25679. Ask the node, never remember."
+  },
+  "env": {
+    "file": ".env.local",
+    "example": ".env.example",
+    "note": "Next reads .env.local by its own convention."
+  },
+  "health": {
+    "path": "/health",
+    "expect": 200,
+    "note": "The former door of design: { ok, service, version } without a session. /api/health of the template answers too."
+  },
+  "runtime": {
+    "stack": "next",
+    "node": ">=20",
+    "build": "npm run build",
+    "start": "node .next/standalone/<traced path>/server.js",
+    "startNote": "The standalone server reads PORT and HOSTNAME from the environment. The installer finds server.js under .next/standalone and copies .next/static next to it.",
+    "nativeModules": [],
+    "distDirEnv": "NEXT_DIST_DIR",
+    "distDirNote": "The node builds into a neighbour folder named by this variable while the old build serves, then switches: no downtime. A replacement that does not declare it is stopped for the build."
+  },
+  "settings": {
+    "owns": [
+      "DESIGN-CONFIG"
+    ],
+    "key": {
+      "header": "X-Settings-Key",
+      "env": "SETTINGS_SECRET"
+    },
+    "store": "data/settings/design.json (the owner patch; defaults in settings/design/defaults.json)",
+    "seed": "node scripts/seed-from-site.mjs <site folder> — once, at the birth of the element; never overwrites",
+    "note": "549-2: design keeps the DESIGN settings for the node (owner patch over defaults); the template door /api/settings/design of its own DESIGN-CONFIG is removed.",
+    "door": "/api/settings"
+  },
+  "contract": [
+    "Takes its port from the environment; never remembers a number.",
+    "Answers GET /api/health with 200 without a session.",
+    "Signs people in only through the node's auth element; never carries its own sign-in.",
+    "Reaches stored data only through the node's data element; never opens a database file.",
+    "Public pages stay static: no force-dynamic, no cookies() or headers() in a layout or a page.",
+    "Reads its own name from this passport at start (lib/own-id.ts); no name of the element is written in its code."
+  ],
+  "languages": {
+    "count": 2,
+    "note": "en is the base, ru the translation; the set is this site's own setting (NEXT_PUBLIC_SUPPORTED_LANGUAGES, kind own)."
+  },
+  "license": "MIT",
+  "doors": [
+    {
+      "path": "/en, /ru",
+      "method": "GET",
+      "gives": "the public home page of the element"
+    },
+    {
+      "path": "/robots.txt, /sitemap.xml",
+      "method": "GET",
+      "gives": "search signals; the sitemap lists pages only once the element has a real public address"
+    },
+    {
+      "path": "/health",
+      "method": "GET",
+      "gives": "liveness"
+    },
+    {
+      "path": "/mcp",
+      "method": "POST",
+      "gives": "MCP: the project design as commands for an agent"
+    },
+    {
+      "path": "/api/settings, /api/settings/design",
+      "method": "GET",
+      "gives": "the project design: the key X-Settings-Key (every element of the node) or the architect session"
+    },
+    {
+      "path": "/api/settings/design",
+      "method": "PATCH",
+      "gives": "write a patch — only the architect (session through the sign-in service); the key does not give writing"
+    },
+    {
+      "path": "/api/session",
+      "method": "GET",
+      "gives": "whether the viewer is the architect — for the screens of the architect mode"
+    }
+  ],
+  "protocols": {
+    "api": {
+      "provided": true,
+      "doors": [
+        "/api/settings",
+        "/api/settings/design",
+        "/api/settings/changed",
+        "/api/session"
+      ],
+      "format": "JSON: { ok, kind, defaults, patch, config } — config = the owner patch over the defaults"
+    },
+    "mcp": {
+      "provided": true,
+      "door": "/mcp",
+      "transport": "streamable-http, stateless",
+      "tools": [
+        "describe_config",
+        "settings_version",
+        "get_project_settings",
+        "subscribe"
+      ]
+    },
+    "a2a": {
+      "provided": false,
+      "note": "Not built in the prototype."
+    },
+    "m2m": {
+      "provided": false,
+      "note": "Not built in the prototype."
+    }
+  },
+  "provides": [
+    "project-design"
+  ]
+}

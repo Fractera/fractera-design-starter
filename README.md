@@ -1,73 +1,51 @@
-# Fractera Design — the design of the project as its own element
+# Fractera Design — the shared look of the node
 
-An AGI ITEM of the node (step 309, owner 2026-09-26): «создать отдельный полностью микро сервис такой же как у блок … любые
-микро сервисы … будут менять свой дизайн … в тот момент когда микро сервис дизайн будет вносить изменения».
+This element keeps the **design of the whole node** — colours of the light and dark theme, fonts, type, shapes and block settings —
+and gives it to every element. Since **v1.0.0** (node step 549-2) it is built on the Fractera native element template; its doors did
+not change.
 
-## What it gives
-
-One place for the look of the whole project — colours of the light and dark theme (13 roles each), fonts for headings,
-text and code, text scale and line height, corner radius, borders, spacing, page widths and block settings (the centered
-first screen). The architect saves — every subscribed service of the node re-styles itself in seconds, without a rebuild.
-
-## Where it lives
-
-| Part | Here |
+| Door | What it does |
 |---|---|
-| passport | `OWN-SERVICE-PROPS.json` (port wish 24686, health `/health`) |
-| store | `data/settings/design.json` — the owner decisions; defaults `settings/design/defaults.json` |
-| doors | `GET /api/settings/design` (node key or architect), `PATCH /api/settings/design` (architect only) |
-| MCP | `/mcp`: `describe_config`, `settings_version`, `get_project_settings` (kind `design`), `subscribe` |
-| signal | after every save — `POST {version}` with `X-Settings-Key` to every subscriber (`subscribers.js`) |
-| editor | `/<lang>/architect` (fonts), `/type`, `/shape`, `/colors` — the four editors of the core original (aifa.dev/ru/architect/design): choice on the left, sticky preview on the right, ten ready colour sets; behind the architect gate |
-| public page | `/en`, `/ru` |
+| `GET /health` | `{ ok, service: "design", version }` for the node watcher |
+| `POST /mcp` | MCP, stateless: `describe_config`, `settings_version`, `get_project_settings`, `subscribe` (node key in `X-Settings-Key`) |
+| `GET /api/settings`, `GET /api/settings/design` | the design — the node key or the architect session |
+| `PATCH /api/settings/design` | the architect writes a patch; every subscribed address gets `POST {version}` with `X-Settings-Key` |
+| `GET /api/elements`, `/api/session` | the architect's helpers of the editors |
+| `/<lang>/architect/*` | the editors: overview, colours, type, shape |
 
-## Install
+Where it lives: server modules `lib/config-store/`, editors `app/[lang]/(protectedLayer)/architect/_components/design-editors/`, one widget
+per page in `architect/_widgets/dynamic/widget-dynamic-design-*`. Defaults — `settings/design/defaults.json`; the owner patch and the
+subscribers — `data/settings/` (never in git).
 
-The node installer (`npm run services:install -- --only design`) with the entry in `AGI-ITEMS-CONFIG/agi-items.json`.
-Environment (`.env.example`): `PORT`, `SETTINGS_SECRET` (the node key), `AUTH_SERVICE_URL` (architect gate),
-`DESIGN_SERVICE_URL` (itself — the element follows its own design like every other service).
-At birth, seed it from the site once, so the first pull does not reset the project to the default theme:
+---
+
+# fractera-native-item-starter
+
+The reference starter template of a Fractera native element. Native elements are the root elements of a node: they stand on
+every node, they come only from the Fractera repository, and they are never sold and never join an outside network. They serve
+the person and the other elements of their own node. Custom elements are born from `fractera-custom-item-starter` by the node's
+button «Create WEB4 ITEM»; native ones are added from here.
+
+The template is the custom reference template without the network parts: no showcase or Nostr fields in the passport
+(`visibility: node`, `messengers: { h2a: true, h2h: false, a2a: false }`), no messenger between people, no work for outside agents
+and no order summaries. The home page shows one line, «Reference native template», and the yellow starter sign.
+
+## The contract a replacement must keep
+
+- `OWN-SERVICE-PROPS/` — the passport, the element's main door (`GET /api/own-service-props`); `NODE-CONTRACT.json` — what the node needs to install it.
+- The port comes from the `PORT` environment variable.
+- `GET /api/health` answers 200 without a session.
+- Sign-in only through the node's auth element; stored data only through the node's data element.
+- Public pages stay static.
+
+A repository that does not keep this contract is refused; the node does not bend to it.
+
+## Run on its own
 
 ```
-node scripts/seed-from-site.mjs <site folder>     # copies DESIGN-CONFIG/design-config.json of the site; never overwrites
+npm install
+npm run build
+PORT=24683 node .next/standalone/server.js
 ```
 
-## Connect a service
-
-Copy the three pieces every service of the node carries (`fractera-root-starter` is the reference):
-
-```ts
-// lib/design-follow.ts — pullDesign(), subscribeToDesign(who), signalKeyOk()
-// app/api/settings/changed/route.ts
-export async function POST(req: NextRequest) {
-  if (!signalKeyOk(req.headers.get("x-settings-key"))) return NextResponse.json({ ok: false }, { status: 401 })
-  const r = await pullDesign()          // writes the design into the service's own DESIGN-CONFIG
-  revalidatePath("/", "layout")        // re-render on every keyed signal
-  return NextResponse.json(r)
-}
-// instrumentation.ts — at start: pullDesign(), then subscribeToDesign("<id>")
-```
-
-The service's `design-config.ts` reads its `DESIGN-CONFIG` file at render and `design-css.ts` writes the CSS variables
-(`--primary`, `--radius`, `--font-heading`, `--type-scale`, `--hero-one-w`, …). Set `DESIGN_SERVICE_URL` in its env.
-
-## Extend
-
-A new design setting = a field in `presentation/lib/settings/fields.ts` (a section of kind `design`), its label in
-`presentation/components/settings/fields.i18n.ts`, the key in `settings/design/defaults.json` and `schema.json`, and the
-CSS variable in every service's `lib/design-css.ts`. Values outside the safe bounds are ignored by the services.
-
-## What it does not do
-
-Change the CODE of blocks (that needs a rebuild of the service that owns the copy); refresh an open browser tab; deliver
-to services on another machine.
-
-## Remove
-
-Uninstall the element; services keep the last design in their own `DESIGN-CONFIG` and live on.
-
-## Proven by
-
-`probe-309` (isolated): a save of `colors.light.primary`, `shape.radius`, `fonts.heading.family` changed the root page
-HTML with the same process; a signal without the key → 401; removing the decisions removed the values. Live on the node —
-step 309-5.
+License: MIT.

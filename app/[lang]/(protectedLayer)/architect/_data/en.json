@@ -1,0 +1,11 @@
+{
+  "title": "Design",
+  "description": "The look of this project. What you save here is applied on every page of every service of the project in seconds, without a rebuild.",
+  "keywords": "",
+  "blocks": [
+    {
+      "kind": "widget-dynamic-design-overview",
+      "bid": "vmnyo"
+    }
+  ]
+}
