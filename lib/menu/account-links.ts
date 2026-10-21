@@ -1,6 +1,6 @@
 import { branchChild, wordsIn } from "@/lib/page-tree"
 import type { ShellLink as DrawerLink } from "@/components/shell/shell-types"
-// The architect pages live in the node's core (280); /<lang>/architect redirects there.
+// The architect pages live in the node's core (280): the link goes to the core address (ARCHITECT_URL, step 564).
 const ARCHITECT_HOME = "/architect"
 const ARCHITECT_TITLE: Record<string, string> = {
   en: "The architect group of pages",
@@ -46,6 +46,11 @@ const MESSENGERS = [
   { href: "/messenger-h2a", label: "H2A Messenger" },
 ]
 
+// 564 (владелец 2026-10-21: «Кнопка находится в правом выдвижном ящике … должна посылать прямо на субдомен типа: architect.domain»):
+// у элемента со своей веткой /<язык>/architect (config, design) путь без адреса ядра оставался на субдомене элемента. Адрес ядра —
+// ARCHITECT_URL от установщика узла; нет его — прежний путь (у сайта и прочих он перенаправляет в ядро).
+const ARCHITECT_URL = (process.env.ARCHITECT_URL ?? "").replace(/[/]+$/, "")
+const architectHref = (lang: string) => `${ARCHITECT_URL}/${lang}${ARCHITECT_HOME}`
 export function accountLinks(lang: string): DrawerLink[] {
   return [
     ...MESSENGERS.map((m) => ({ href: `/${lang}${m.href}`, label: m.label, roles: ARCHITECT_LAYER_ROLES })),
@@ -54,7 +59,7 @@ export function accountLinks(lang: string): DrawerLink[] {
     // Адрес, роли и подпись взяты у самого слоя — `ARCHITECT_HOME`, `ARCHITECT_LAYER_ROLES` и его словарь, —
     // а не переписаны сюда: копия разошлась бы с дверью, которую открывает пункт.
     {
-      href: `/${lang}${ARCHITECT_HOME}`,
+      href: architectHref(lang),
       label: ARCHITECT_TITLE[lang] ?? ARCHITECT_TITLE.en,
       roles: ARCHITECT_LAYER_ROLES,
     },
