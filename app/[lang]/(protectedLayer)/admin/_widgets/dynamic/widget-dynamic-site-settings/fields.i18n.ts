@@ -92,6 +92,7 @@ export type FieldsUi = {
 
 const en: FieldsUi = {
   sections: {
+    designSkill: "Design skill of the project",
     blocksHero: "First screen",
     brand: "Brand & identity",
     author: "Author",
@@ -106,6 +107,7 @@ const en: FieldsUi = {
     socials: "Social profiles",
   },
   sectionHints: {
+    designSkill: "One design skill for every element that follows «Design»: their agents build blocks and pages in its style. In an app factory, or in an element set apart from «Design», the element keeps its own.",
     blocksHero: "The centered first screen of every page. A change reaches every service that follows the settings in seconds, without a rebuild — reload the page to see it.",
     author: "Default author used in metadata and Person structured data.",
     commerce:
@@ -168,6 +170,14 @@ const en: FieldsUi = {
     "og.siteName": { label: "Site name", placeholder: "Fractera" },
     "og.locale": { label: "Locale", placeholder: "en_US" },
     "og.imageWidth": { label: "Image width", placeholder: "1200" },
+    "blocks.designSkill": {
+      label: "Design skill",
+      options: {
+        impeccable: "impeccable — a visual world drawn from your audience",
+        "design-taste-frontend": "taste — an anti-generic product landing",
+        blocks: "Blocks only — the catalogue and the «Design» tokens",
+      },
+    },
     "blocks.heroOneWidth": { label: "Width, px", placeholder: "1250", hint: "The widest the first screen gets: section, title and steps strip." },
     "blocks.heroOneSize.mobile": { label: "Title on a phone, px", placeholder: "31.2" },
     "blocks.heroOneSize.tablet": { label: "Title on a tablet, px", placeholder: "39" },
@@ -256,6 +266,7 @@ const en: FieldsUi = {
 
 const ru: FieldsUi = {
   sections: {
+    designSkill: "Навык дизайна проекта",
     blocksHero: "Первый экран",
     brand: "Имя и лицо проекта",
     author: "Автор",
@@ -270,6 +281,7 @@ const ru: FieldsUi = {
     socials: "Профили в соцсетях",
   },
   sectionHints: {
+    designSkill: "Один навык дизайна для всех элементов, которые следуют «Дизайну»: их агенты строят блоки и страницы в его стиле. На заводе приложений и у элемента, отделённого от «Дизайна», остаётся свой.",
     blocksHero: "Первый экран по центру на каждой странице. Правка доходит до всех служб, которые следят за настройками, за секунды и без пересборки — обновите страницу, чтобы увидеть.",
     author: "Автор по умолчанию: он подставляется в мету страниц и в разметку «Person» для поисковиков.",
     commerce:
@@ -336,6 +348,14 @@ const ru: FieldsUi = {
     "og.siteName": { label: "Имя сайта в карточке", placeholder: "Fractera" },
     "og.locale": { label: "Локаль", placeholder: "ru_RU" },
     "og.imageWidth": { label: "Ширина картинки", placeholder: "1200" },
+    "blocks.designSkill": {
+      label: "Навык дизайна",
+      options: {
+        impeccable: "impeccable — визуальный мир из мира вашей аудитории",
+        "design-taste-frontend": "taste — продуктовый лендинг без шаблонности",
+        blocks: "Только блоки — каталог и токены «Дизайна»",
+      },
+    },
     "blocks.heroOneWidth": { label: "Ширина, px", placeholder: "1250", hint: "Наибольшая ширина первого экрана: секция, заголовок и полоса шагов." },
     "blocks.heroOneSize.mobile": { label: "Заголовок на телефоне, px", placeholder: "31.2" },
     "blocks.heroOneSize.tablet": { label: "Заголовок на планшете, px", placeholder: "39" },
