@@ -1,135 +1,172 @@
 {
   "title": "Fractera Design — the shared look of your products in one place",
-  "description": "A standalone microservice that keeps the design of your project — colours for the light and dark theme, fonts, text scale, corner radius, spacing and block settings — and hands it, the moment you save, to the products that follow it — every product on the server or only chosen ones: each product decides.",
+  "description": "The design of your project — colours of the light and dark theme, fonts, text scale, corners, spacing and block settings — in one place. Save once, and every service that follows it re-renders its pages in seconds.",
   "keywords": "",
   "blocks": [
     {
-      "kind": "block-hero-centered",
-      "pill": "Agentic engineering infrastructure",
-      "title": "A shared design for your products",
-      "description": "A standalone microservice that keeps the design of your project — colours for the light and dark theme, fonts, text scale, corner radius, spacing and block settings — and hands it, the moment you save, to the products that follow it — every product on the server or only chosen ones: each product decides.",
-      "cta": {
-        "label": "Open the design",
-        "href": "/en/architect"
-      },
-      "bid": "hgotd"
+      "kind": "widget-static-design-landing",
+      "bid": "gw001"
     },
     {
-      "kind": "text-list",
-      "items": [
-        "13 — colour roles for each theme",
-        "3 — font roles: headings, text, code",
-        "6 — services re-styled by one save"
-      ],
-      "bid": "hnao1"
+      "kind": "block-hero-centered",
+      "pill": "OpenSource Web4 agent & app starter kit",
+      "title": "One look for every product of your project",
+      "description": "Colours for the light and dark theme, fonts, text scale, corners and spacing live in one place. Save once, and every service that follows the design re-renders its pages in seconds, still static.",
+      "cta": {
+        "label": "Five sections",
+        "href": "#hood"
+      },
+      "secondary": {
+        "label": "Who follows it",
+        "href": "#agent"
+      },
+      "bid": "gh001"
+    },
+    {
+      "kind": "block-section-head",
+      "id": "route",
+      "title": "How a colour goes",
+      "bid": "ga000"
+    },
+    {
+      "kind": "text-h4",
+      "text": "The architect changes the design",
+      "bid": "ga001"
+    },
+    {
+      "kind": "text-p",
+      "text": "On this element’s pages: the colours of both themes, the fonts, text and spacing, the blocks.",
+      "bid": "ga002"
+    },
+    {
+      "kind": "text-h4",
+      "text": "Design keeps it",
+      "bid": "ga003"
+    },
+    {
+      "kind": "text-p",
+      "text": "One set for the whole project, the light and the dark theme side by side.",
+      "bid": "ga004"
+    },
+    {
+      "kind": "text-h4",
+      "text": "A signal goes out",
+      "bid": "ga005"
+    },
+    {
+      "kind": "text-p",
+      "text": "Every subscribed service gets it the moment you save and takes the new design over MCP.",
+      "bid": "ga006"
+    },
+    {
+      "kind": "text-h4",
+      "text": "Pages show it",
+      "bid": "ga007"
+    },
+    {
+      "kind": "text-p",
+      "text": "Each service re-renders its pages in seconds, still static; visitors see it after reloading.",
+      "bid": "ga008"
     },
     {
       "kind": "text-small",
-      "text": "MCP · DESIGN-CONFIG · Light and dark theme · Google Fonts · Claude Code Agent",
-      "bid": "h8nhh"
+      "text": "Only the architect changes the design, after signing in; services read it with the node’s key.",
+      "bid": "ga009"
     },
     {
       "kind": "block-section-head",
-      "id": "groups",
-      "badge": "What you design",
+      "id": "solves",
+      "title": "What changes for you",
+      "bid": "gb000"
+    },
+    {
+      "kind": "text-table",
+      "head": [
+        "Without it",
+        "With Design"
+      ],
+      "rows": [
+        [
+          "Theme files scattered across the repositories",
+          "One design for every service of the project"
+        ],
+        [
+          "A rebuild for a colour",
+          "A save, and the pages re-render in seconds"
+        ],
+        [
+          "Each service picks its own fonts",
+          "Three font roles for headings, text and code, any font from Google Fonts"
+        ],
+        [
+          "The dark theme drifts away from the light one",
+          "Thirteen colour roles for each theme, kept in one place"
+        ]
+      ],
+      "bid": "gb001"
+    },
+    {
+      "kind": "block-section-head",
+      "id": "agent",
+      "title": "Who follows it",
+      "bid": "gc000"
+    },
+    {
+      "kind": "text-p",
+      "text": "Every service of the project that subscribes to it: the site, sign-in, data, blocks, project settings and this element itself. A service without the Design element keeps its own theme and runs as before.",
+      "bid": "gc001"
+    },
+    {
+      "kind": "text-p",
+      "text": "The design skill of the project is chosen here too.",
+      "bid": "gc002"
+    },
+    {
+      "kind": "block-section-head",
+      "id": "hood",
       "title": "Five sections, each on its own page",
-      "bid": "h95c5"
+      "bid": "gd000"
     },
     {
-      "kind": "text-p",
-      "text": "Open a section, change what you need, save. Every service of the project follows at once.",
-      "bid": "hyvsr"
-    },
-    {
-      "kind": "text-h3",
-      "text": "Colours — light theme",
-      "bid": "h5lqz"
-    },
-    {
-      "kind": "text-p",
-      "text": "Primary, background, text, borders, accents and the chart palette.",
-      "bid": "h8jod"
-    },
-    {
-      "kind": "text-h3",
-      "text": "Colours — dark theme",
-      "bid": "h79hv"
-    },
-    {
-      "kind": "text-p",
-      "text": "The same roles for visitors who prefer the dark theme.",
-      "bid": "hjcdd"
-    },
-    {
-      "kind": "text-h3",
-      "text": "Fonts",
-      "bid": "h2ahz"
-    },
-    {
-      "kind": "text-p",
-      "text": "Fonts for headings, body text and code — any font from Google Fonts.",
-      "bid": "heip7"
-    },
-    {
-      "kind": "text-h3",
-      "text": "Text, shapes and spacing",
-      "bid": "h6m7e"
-    },
-    {
-      "kind": "text-p",
-      "text": "Text scale and line height, corner radius, borders, spacing and page width.",
-      "bid": "hfki8"
-    },
-    {
-      "kind": "text-h3",
-      "text": "Blocks",
-      "bid": "hehwn"
-    },
-    {
-      "kind": "text-p",
-      "text": "The width and the title sizes of the centered first screen on phone, tablet and computer.",
-      "bid": "hxmte"
+      "kind": "text-table",
+      "head": [
+        "Section",
+        "What it sets"
+      ],
+      "rows": [
+        [
+          "Colours — light theme",
+          "Primary, background, text, borders, accents and the chart palette"
+        ],
+        [
+          "Colours — dark theme",
+          "The same roles for visitors who prefer the dark theme"
+        ],
+        [
+          "Fonts",
+          "Fonts for headings, body text and code, any font from Google Fonts"
+        ],
+        [
+          "Text, shapes and spacing",
+          "Text scale and line height, corner radius, borders, spacing and page width"
+        ],
+        [
+          "Blocks",
+          "The width and the title sizes of the centered first screen on phone, tablet and computer"
+        ]
+      ],
+      "bid": "gd001"
     },
     {
       "kind": "block-section-head",
-      "id": "how",
-      "badge": "How it works",
-      "title": "Change once — the whole project follows",
-      "bid": "h6uxw"
+      "id": "credits",
+      "title": "Open source",
+      "bid": "ge000"
     },
     {
       "kind": "text-p",
-      "text": "No theme files scattered across repositories, no rebuild for a colour.",
-      "bid": "havjk"
-    },
-    {
-      "kind": "text-list",
-      "ordered": true,
-      "items": [
-        "Change. The architect changes the design on this screen and saves it. Design keeps it.",
-        "Signal. The moment you save, every subscribed service gets a signal and takes the new design itself over MCP.",
-        "See. Each service re-renders its pages with the new design in seconds — static, fast, without a rebuild."
-      ],
-      "bid": "hs34q"
-    },
-    {
-      "kind": "block-faq",
-      "title": "Frequently asked questions",
-      "items": [
-        {
-          "q": "Which services follow the design?",
-          "a": "Every service of the project that subscribes to it: the site, sign-in, data, blocks, project settings and this element itself. A service without the Design element keeps its own theme and runs as before."
-        },
-        {
-          "q": "Does a change need a rebuild?",
-          "a": "No. Pages stay static and fast: when you save, each service takes the new design over MCP and re-renders its pages once, in seconds. Visitors see the change after reloading the page."
-        },
-        {
-          "q": "Who can change the design?",
-          "a": "Only the architect of the project, after signing in. Everyone else sees this page and nothing more; services read the design with the key of the node."
-        }
-      ],
-      "bid": "h2jco"
+      "text": "Built by Fractera for the [Lagrix](https://lagrix.dev) protocol and for any web2 project with more than one product. MIT license, the code is at [github.com/Fractera/fractera-design-starter](https://github.com/Fractera/fractera-design-starter).",
+      "bid": "ge001"
     }
   ]
 }
