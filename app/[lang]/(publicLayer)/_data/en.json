@@ -118,6 +118,30 @@
     },
     {
       "kind": "block-section-head",
+      "id": "numbers",
+      "title": "What it holds",
+      "bid": "z0000"
+    },
+    {
+      "kind": "block-metrics",
+      "items": [
+        {
+          "value": "13",
+          "label": "colour roles for each theme, light and dark, in one place"
+        },
+        {
+          "value": "3",
+          "label": "font roles — headings, text and code — any font from Google Fonts"
+        },
+        {
+          "value": "1",
+          "label": "save, and every service that follows the design redraws its pages in seconds"
+        }
+      ],
+      "bid": "z0001"
+    },
+    {
+      "kind": "block-section-head",
       "id": "tool",
       "title": "Change this project's design",
       "bid": "q0002"
@@ -131,6 +155,25 @@
       "kind": "text-p",
       "text": "Why: one look for every element of the project, with no theme files scattered across repositories. Who: only the architect, after signing in.",
       "bid": "q0004"
+    },
+    {
+      "kind": "block-flow",
+      "title": "How a change reaches every service",
+      "steps": [
+        {
+          "title": "You change it",
+          "text": "On this element's pages: a colour, a font, the text scale, corners or spacing."
+        },
+        {
+          "title": "One save",
+          "text": "Design keeps one set for the whole project and sends a signal to every subscribed service."
+        },
+        {
+          "title": "Pages redraw",
+          "text": "Each service takes the new design and redraws its pages in seconds; they stay static."
+        }
+      ],
+      "bid": "z0002"
     },
     {
       "kind": "text-p",
@@ -155,39 +198,82 @@
     },
     {
       "kind": "block-section-head",
-      "id": "hood",
+      "id": "parts",
       "title": "Five sections, each on its own page",
       "bid": "gd000"
     },
     {
-      "kind": "text-table",
-      "head": [
-        "Section",
-        "What it sets"
+      "kind": "block-cards",
+      "title": "Five sections, each on its own page",
+      "cols": 3,
+      "children": [
+        {
+          "kind": "block-card",
+          "children": [
+            {
+              "kind": "text-h3",
+              "text": "Colours — light theme"
+            },
+            {
+              "kind": "text-p",
+              "text": "Primary, background, text, borders, accents and the chart palette"
+            }
+          ]
+        },
+        {
+          "kind": "block-card",
+          "children": [
+            {
+              "kind": "text-h3",
+              "text": "Colours — dark theme"
+            },
+            {
+              "kind": "text-p",
+              "text": "The same roles for visitors who prefer the dark theme"
+            }
+          ]
+        },
+        {
+          "kind": "block-card",
+          "children": [
+            {
+              "kind": "text-h3",
+              "text": "Fonts"
+            },
+            {
+              "kind": "text-p",
+              "text": "Fonts for headings, body text and code, any font from Google Fonts"
+            }
+          ]
+        },
+        {
+          "kind": "block-card",
+          "children": [
+            {
+              "kind": "text-h3",
+              "text": "Text, shapes and spacing"
+            },
+            {
+              "kind": "text-p",
+              "text": "Text scale and line height, corner radius, borders, spacing and page width"
+            }
+          ]
+        },
+        {
+          "kind": "block-card",
+          "children": [
+            {
+              "kind": "text-h3",
+              "text": "Blocks"
+            },
+            {
+              "kind": "text-p",
+              "text": "The width and the title sizes of the centered first screen on phone, tablet and computer"
+            }
+          ]
+        }
       ],
-      "rows": [
-        [
-          "Colours — light theme",
-          "Primary, background, text, borders, accents and the chart palette"
-        ],
-        [
-          "Colours — dark theme",
-          "The same roles for visitors who prefer the dark theme"
-        ],
-        [
-          "Fonts",
-          "Fonts for headings, body text and code, any font from Google Fonts"
-        ],
-        [
-          "Text, shapes and spacing",
-          "Text scale and line height, corner radius, borders, spacing and page width"
-        ],
-        [
-          "Blocks",
-          "The width and the title sizes of the centered first screen on phone, tablet and computer"
-        ]
-      ],
-      "bid": "gd001"
+      "bid": "z0003"
     },
     {
       "kind": "block-section-head",

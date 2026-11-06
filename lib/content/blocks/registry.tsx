@@ -4,6 +4,12 @@ import { SectionHead } from '@/components/blocks/block-section-head'
 import { HeroCentered } from '@/components/blocks/block-hero-centered'
 import { WarningCard } from '@/components/blocks/block-warning-card'
 import { Faq } from '@/components/blocks/block-faq'
+// 662-7 (владелец 2026-11-06: «посмотри какие форматы из секции блоки можно было бы перенести в секцию дизайн»): карточки, схема в три
+// шага и крупные цифры — те же блоки каталога, что у «Блоков» и графа.
+import { Cards } from '@/components/blocks/block-cards'
+import { Card } from '@/components/blocks/block-card'
+import { Flow } from '@/components/blocks/block-flow'
+import { Metrics } from '@/components/blocks/block-metrics'
 import type { Block } from './types'
 import { TEXT_SET } from '@/lib/content/text-set'
 
@@ -19,6 +25,10 @@ export const BLOCK_SET: BlockSet = {
   'block-hero-centered': HeroCentered,
   'block-warning-card': WarningCard,
   'block-faq': Faq,
+  'block-cards': Cards,
+  'block-card': Card,
+  'block-flow': Flow,
+  'block-metrics': Metrics,
 }
 
 /** Нарисовать список блоков по порядку; `keyPrefix` держит ключи уникальными между вызовами на одной странице. */
