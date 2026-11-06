@@ -75,6 +75,17 @@
     },
     {
       "kind": "block-section-head",
+      "id": "power",
+      "title": "On from the start",
+      "bid": "q0000"
+    },
+    {
+      "kind": "text-p",
+      "text": "This element starts with the node. The node holds the switch: the architect turns it off or on with a word to the main agent, or on the element's settings page in the core.",
+      "bid": "q0001"
+    },
+    {
+      "kind": "block-section-head",
       "id": "solves",
       "title": "What changes for you",
       "bid": "gb000"
@@ -104,6 +115,27 @@
         ]
       ],
       "bid": "gb001"
+    },
+    {
+      "kind": "block-section-head",
+      "id": "tool",
+      "title": "Change this project's design",
+      "bid": "q0002"
+    },
+    {
+      "kind": "text-p",
+      "text": "This is a working project, not only a landing: the colours of both themes, the fonts, the text scale, corners and spacing change on this element's pages, and every service that follows the design redraws its pages within seconds.",
+      "bid": "q0003"
+    },
+    {
+      "kind": "text-p",
+      "text": "Why: one look for every element of the project, with no theme files scattered across repositories. Who: only the architect, after signing in.",
+      "bid": "q0004"
+    },
+    {
+      "kind": "text-p",
+      "text": "[Open the design settings →](/en/architect/colors)",
+      "bid": "q0005"
     },
     {
       "kind": "block-section-head",
@@ -159,6 +191,31 @@
     },
     {
       "kind": "block-section-head",
+      "id": "builder",
+      "title": "Your own builder comes with it",
+      "bid": "q0006"
+    },
+    {
+      "kind": "text-p",
+      "text": "Every element of the node comes with its own Claude Code agent and can get its own Telegram bot. When something in this element should change, write to its bot from your phone, and the agent updates the logic or the design.",
+      "bid": "q0007"
+    },
+    {
+      "kind": "text-p",
+      "text": "The agent works only in its element's folder and never reads the whole node, so each change costs fewer tokens. Your Claude Code subscription pays for it.",
+      "bid": "q0008"
+    },
+    {
+      "kind": "text-list",
+      "items": [
+        "The element's bot is connected in the core, on its «Telegram» page.",
+        "The agent returns a commit; you look at it in «Preview» and accept it or turn it down.",
+        "At the computer, the agent's terminal is in the core, in this element's «Build»."
+      ],
+      "bid": "q0009"
+    },
+    {
+      "kind": "block-section-head",
       "id": "credits",
       "title": "Open source",
       "bid": "ge000"
@@ -167,6 +224,31 @@
       "kind": "text-p",
       "text": "Built by Fractera for the [Lagrix](https://lagrix.dev) protocol and for any web2 project with more than one product. MIT license, the code is at [github.com/Fractera/fractera-design-starter](https://github.com/Fractera/fractera-design-starter).",
       "bid": "ge001"
+    },
+    {
+      "kind": "block-section-head",
+      "id": "faq",
+      "title": "Questions and answers",
+      "bid": "q000a"
+    },
+    {
+      "kind": "block-faq",
+      "title": "Questions and answers",
+      "items": [
+        {
+          "q": "Do the pages have to be rebuilt after a change?",
+          "a": "No. Each service redraws its pages within seconds and they stay static; visitors see the change after a reload."
+        },
+        {
+          "q": "Which fonts can I use?",
+          "a": "Any font from Google Fonts, in three roles: headings, text and code."
+        },
+        {
+          "q": "What if a service does not follow the design?",
+          "a": "It keeps its own theme and works as before."
+        }
+      ],
+      "bid": "q000b"
     }
   ]
 }
